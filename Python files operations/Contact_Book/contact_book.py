@@ -2,7 +2,7 @@
 
 import csv
 import re
-from itertools import zip_longest
+
 
 # set the file with contacts
 file_with_contacts = "Contact_book.csv"
