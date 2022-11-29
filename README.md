@@ -31,38 +31,38 @@ $ git clone https://github.com/monikaglazz/Python.git your_project_name
 
 ## Table of Contents
 
-### [Python API]
+### Python API
 
 * [Favorites_cats](https://github.com/monikaglazz/Python-projects/blob/main/Python%20API%20operations/Favorites_cats/favorites_cats.py)
 
 
-### [Python Files]
+### Python Files
 
 * [Compare_Files](https://github.com/monikaglazz/Python-projects/tree/main/Python%20files%20operations/Compare_Files)
 * [Contact_Book](https://github.com/monikaglazz/Python-projects/blob/main/Python%20files%20operations/Contact_Book/contact_book.py)
 * [Does_Page_Exists](https://github.com/monikaglazz/Python-projects/blob/main/Python%20files%20operations/Does_Page_Exists/does_page_exists.py)
 * [Split_Name_And_Surname](https://github.com/monikaglazz/Python-projects/blob/main/Python%20files%20operations/Split_Name_And_Surname/split_name_and_surname.py)
 
-### [Python Games]
+### Python Games
 
 * [Dice_Throw](https://github.com/monikaglazz/Python-projects/blob/main/Python%20games/Dice_Throw/dice_throw.py)
 * [Cows_And_Bulls](https://github.com/monikaglazz/Python-projects/blob/main/Python%20games/Cows_And_Bulls/cows_and_bulls.py)
 * [Hangman](https://github.com/monikaglazz/Python-projects/blob/main/Python%20games/Hangman/hangman.py)
 * [Rock_Paper_Scissors_Game](https://github.com/monikaglazz/Python-projects/blob/main/Python%20games/Rock_Paper_Scissors/Rock_Paper_Scissors_Game.py)
 
-### [Python Generators and Decoding]
+### Python Generators and Decoding
 
 * [Age_Decoder](https://github.com/monikaglazz/Python-projects/blob/main/Python%20generators%20and%20decoding/Age_Decoder/age_Decoder.py)
 * [Password_Generator](https://github.com/monikaglazz/Python-projects/blob/main/Python%20generators%20and%20decoding/Password_Generator/password_generator.py)
 
-### [Python Math]
+### Python Math
 
 * [Areas_And_Circuits](https://github.com/monikaglazz/Python-projects/blob/main/Python%20math/Areas_And_Circuits.py)
 * [Basic_Number_Functions](https://github.com/monikaglazz/Python-projects/blob/main/Python%20math/basic_number_functions.py)
 * [Find_Numbers](https://github.com/monikaglazz/Python-projects/blob/main/Python%20math/find_numbers.py)
 * [Sum_In_Range](https://github.com/monikaglazz/Python-projects/blob/main/Python%20math/sum_in_range.py)
 
-### [Python Others]
+### Python Others
 
 * [Convert_Video_to_Audio](https://github.com/monikaglazz/Python-projects/blob/main/Python%20others/Convert_Video_to_Audio/converter_video_audio.py)
 * [Descending_and_Ascending_Lists](https://github.com/monikaglazz/Python-projects/blob/main/Python%20others/Descending_and_Ascending_Lists/numbers_loop.py)
