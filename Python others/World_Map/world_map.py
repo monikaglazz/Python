@@ -72,16 +72,28 @@ worldmap2.title = 'Continents and Countries'
 # adding the continents and countries
 
 worldmap2.add('Antartica', [('aq')])
-worldmap2.add('Asia', ['bd', 'cn', 'af', 'am', 'az', 'bh', 'db', 'bt', 'bn', 'kh', 'tw', 'tl', 'ge', 'in', 'id', 'iq', 'ir', 'il', 'jp', 'jo', 'kz', 'kw', 'kg',
-                       'lb', 'la', 'my', 'mv', 'mn', 'mm', 'np', 'kp', 'kr', 'om', 'pk', 'ps', 'ph', 'ru', 'sa', 'sg', 'lk', 'sy', 'tj', 'tr', 'tm', 'uz', 'vn', 'ye', 'ae', 'th'])
-worldmap2.add('Europe', ['al', 'ad', 'at', 'by', 'ba', 'bg', 'hr', 'cy', 'cz', 'dk', 'ee', 'fi', 'fr', 'ge', 'gr', 'de', 'hu', 'is', 'ie', 'it', 'rs',
-                         'lv', 'li', 'lt', 'lu', 'mk', 'md', 'mt', 'mc', 'me', 'nl', 'no', 'pl', 'pt', 'ro', 'sm', 'rs', 'si', 'sk', 'es', 'se', 'ch', 'ua', 'gb', 'va'])
-worldmap2.add('Africa', ['ng', 'dz', 'ao', 'bj', 'bw', 'bf', 'bi', 'cm', 'cv', 'cf', 'td', 'cd', 'cg', 'ci', 'dj', 'gq', 'eg', 'er', 'et', 'ga', 'gm', 'gh', 'gn', 'gw', 'ke', 'lr',
-                         'ls', 'ly', 'mg', 'ml', 'mw', 'mr', 'mu', 'ma', 'mz', 'na', 'ne', 're', 'rw', 'st', 'sn', 'sc', 'sl', 'so', 'za', 'sd', 'sz', 'tz', 'tg', 'tn', 'ug', 'eh', 'zm', 'zw'])
-worldmap2.add('North america', ['ca', 'mx', 'us', 'pr', 'do', 'cu',
-                                'gl', 'ht', 'bz', 'cr', 'sv', 'gt', 'hn', 'ni', 'pa', 'jm', 'do'])
-worldmap2.add('South america', ['br', 'ar', 'bo', 'cl',
-                                'co', 'ec', 'gf', 'gy', 'py', 'pe', 'sr', 'uy', 've'])
+worldmap2.add('Asia', ['bd', 'cn', 'af', 'am', 'az', 'bh', 'db', 'bt', 'bn',
+                       'kh', 'tw', 'tl', 'ge', 'in', 'id', 'iq', 'ir', 'il',
+                       'jp', 'jo', 'kz', 'kw', 'kg', 'lb', 'la', 'my', 'mv',
+                       'mn', 'mm', 'np', 'kp', 'kr', 'om', 'pk', 'ps', 'ph',
+                       'ru', 'sa', 'sg', 'lk', 'sy', 'tj', 'tr', 'tm', 'uz',
+                       'vn', 'ye', 'ae', 'th'])
+worldmap2.add('Europe', ['al', 'ad', 'at', 'by', 'ba', 'bg', 'hr', 'cy', 'cz',
+                         'dk', 'ee', 'fi', 'fr', 'ge', 'gr', 'de', 'hu', 'is',
+                         'ie', 'it', 'rs', 'lv', 'li', 'lt', 'lu', 'mk', 'md',
+                         'mt', 'mc', 'me', 'nl', 'no', 'pl', 'pt', 'ro', 'sm',
+                         'rs', 'si', 'sk', 'es', 'se', 'ch', 'ua', 'gb', 'va'])
+worldmap2.add('Africa', ['ng', 'dz', 'ao', 'bj', 'bw', 'bf', 'bi', 'cm', 'cv',
+                         'cf', 'td', 'cd', 'cg', 'ci', 'dj', 'gq', 'eg', 'er',
+                         'et', 'ga', 'gm', 'gh', 'gn', 'gw', 'ke', 'lr', 'ls',
+                         'ly', 'mg', 'ml', 'mw', 'mr', 'mu', 'ma', 'mz', 'na',
+                         'ne', 're', 'rw', 'st', 'sn', 'sc', 'sl', 'so', 'za',
+                         'sd', 'sz', 'tz', 'tg', 'tn', 'ug', 'eh', 'zm', 'zw'])
+worldmap2.add('North america', ['ca', 'mx', 'us', 'pr', 'do', 'cu', 'gl', 'ht',
+                                'bz', 'cr', 'sv', 'gt', 'hn', 'ni', 'pa', 'jm',
+                                'do'])
+worldmap2.add('South america', ['br', 'ar', 'bo', 'cl', 'co', 'ec', 'gf', 'gy',
+                                'py', 'pe', 'sr', 'uy', 've'])
 worldmap2.add('Oceania', ['au', 'nz', 'ca', 'ca', 'ca',
                           'ca', 'ca', 'ca', 'ca', 'pg', 'gu'])
 

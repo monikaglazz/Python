@@ -14,11 +14,16 @@ def check_if_pesel_is_correct(pesel):
         pesel_list_digits = [int(x) for x in str(pesel)]
 
         # sum of numbers weight
-        sum_number_weight = (1 * pesel_list_digits[0]+ 3* pesel_list_digits[1]
-                             + 7 * pesel_list_digits[2] + 9 * pesel_list_digits[3]
-                             + 1 * pesel_list_digits[4] + 3 * pesel_list_digits[5]
-                             + 7 * pesel_list_digits[6] + 9 * pesel_list_digits[7]
-                             + 1 * pesel_list_digits[8] + 3 * pesel_list_digits[9])
+        sum_number_weight = (1 * pesel_list_digits[0]
+                             + 3* pesel_list_digits[1]
+                             + 7 * pesel_list_digits[2]
+                             + 9 * pesel_list_digits[3]
+                             + 1 * pesel_list_digits[4]
+                             + 3 * pesel_list_digits[5]
+                             + 7 * pesel_list_digits[6]
+                             + 9 * pesel_list_digits[7]
+                             + 1 * pesel_list_digits[8]
+                             + 3 * pesel_list_digits[9])
 
         # get the modulo of sum
         modulo = sum_number_weight % 10

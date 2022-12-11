@@ -63,6 +63,7 @@ def get_country_index(country_list):
 def get_country_VAT(country_list, country_index):
 
     index = 1
+    tax_value = 0
     for country in country_list:
         if index == country_index:
             tax_value = country[1]
@@ -87,17 +88,17 @@ def price_after_VAT(price, country_index, country_list):
 print("\nHello! You can check the VAT tax with this calculator!")
 
 # explanation what VAT is
-print("""\nA value-added tax (VAT), known in some countries as 
-a goods and services tax (GST), is a type of tax that is assessed 
-incrementally. It is levied on the price of a product or service 
-at each stage of production, distribution, or sale to the end consumer. 
-If the ultimate consumer is a business that collects and pays to the 
+print("""\nA value-added tax (VAT), known in some countries as
+a goods and services tax (GST), is a type of tax that is assessed
+incrementally. It is levied on the price of a product or service
+at each stage of production, distribution, or sale to the end consumer.
+If the ultimate consumer is a business that collects and pays to the
 government VAT on its products or services, it can reclaim the tax paid""")
 
 # Start the program
 while True:
 
-    print("""\nChoose what do you want to do: 
+    print("""\nChoose what do you want to do:
     1 - know product value before tax was added (u have product price with VAT)
     2 - know product value with added tax (u have product price without VAT)
     3 - exit""")

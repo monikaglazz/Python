@@ -1,8 +1,10 @@
-# Bulls and Cows game is played between two players where each player chooses a 4 digit number with distinct
-# non-zero digits as a secret number and players take turns to guess their opponent's secret number.
-# In each turn a player guesses a number and the opponent should respond how many digits in the guessed number
-# has matched with their secret number in the form of Bulls and Cows. If the matching digits are in their right
-# positions, they are Bulls, if in different positions, they are Cows.
+# Bulls and Cows game is played between two players where each player chooses
+# a 4 digit number with distinct non-zero digits as a secret number and
+# players take turns to guess their opponent's secret number.
+# In each turn a player guesses a number and the opponent should respond
+# how many digits in the guessed number has matched with their secret
+# number in the form of Bulls and Cows. If the matching digits are in their
+# right positions, they are Bulls, if in different positions, they are Cows.
 #
 # For example:
 #
@@ -21,11 +23,12 @@ cows_and_bulls = {}
 #  Basic info about the games and rules
 def game_rules():
     print("""\n
-    Bulls and Cows game is played between two players where each player chooses 
-    a 4 digit number with distinct non-zero digits as a secret number and players take turns 
-    to guess their opponent's secret number. In each turn a player guesses a number and the 
-    opponent should respond how many digits in the guessed number has matched with their secret 
-    number in the form of Bulls and Cows. If the matching digits are in their right positions, 
+    Bulls and Cows game is played between two players where each player chooses
+    a 4 digit number with distinct non-zero digits as a secret number and
+    players take turns to guess their opponent's secret number. In each turn
+    a player guesses a number and the opponent should respond how many digits
+    in the guessed number has matched with their secret number in the form of
+    Bulls and Cows. If the matching digits are in their right positions,
     they are Bulls, if in different positions, they are Cows.
 
     For example:
@@ -77,7 +80,7 @@ def extract_number():
         #  Check if the number of digits is ok and if they are unique
         if len(str(number)) == 4:
             correctness = check_characters(str(number))
-            if correctness == True:
+            if correctness is True:
                 return number
             else:
                 print("\nDigits cannot be repeated.")
@@ -154,7 +157,7 @@ print("Hello at Cows and Bulls Game!")
 
 while True:
 
-    print("""\nMenu: 
+    print("""\nMenu:
     1 - show rules
     2 - start guessing
     3 - exit game \n""")

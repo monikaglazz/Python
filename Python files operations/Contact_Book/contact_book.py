@@ -126,7 +126,7 @@ def find_contact(contacts_list):
     elif filtering == 3:
         filtering_phone = input("\nGive Phone number: ")
         correct = check_phone_number(filtering_phone)
-        if correct == True:
+        if correct is True:
             found_contacts = get_contacts(
                 filtering_phone, contacts_list, data_index)
             show_contact_data(found_contacts)
@@ -136,7 +136,7 @@ def find_contact(contacts_list):
     elif filtering == 4:
         filtering_email = input("\nGive Email: ")
         correct = check_email(filtering_email)
-        if correct == True:
+        if correct is True:
             found_contacts = get_contacts(
                 filtering_email, contacts_list, data_index)
             show_contact_data(found_contacts)
@@ -181,12 +181,11 @@ def get_phone():
             break
         else:
             correct = check_phone_number(input_user)
-            if correct == True:
+            if correct is True:
                 phone = input_user
                 break
             else:
-                print("Wrong Phone number. It has to have 9 digits. Try again.")
-
+                print("Wrong! It has to have 9 digits. Try again.")
     return phone
 
 
@@ -200,7 +199,7 @@ def get_email():
             break
         else:
             correct = check_email(input_user)
-            if correct == True:
+            if correct is True:
                 email = input_user
                 break
             else:

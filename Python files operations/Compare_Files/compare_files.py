@@ -33,7 +33,7 @@ def compare_files_filecmp_module(file_name_1, file_name_2):
         print("At least one of files is not existing.")
         return 0
 
-    if compare == True:
+    if compare is True:
         print("Files are the same")
     else:
         print("Files are not the same")

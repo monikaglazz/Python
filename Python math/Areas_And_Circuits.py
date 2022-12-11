@@ -37,8 +37,10 @@ def square_circuit(side_length):
 
 
 # Function to get triangle area
-def triangle_area(first_side_length=0, height_to_first_side=0, second_side_length=0, third_side_length=0,
-                  angle_between_sides_rad=0, second_angle_rad=0, third_angle_rad=0, radius_out_circle=0,
+def triangle_area(first_side_length=0, height_to_first_side=0, 
+                  second_side_length=0, third_side_length=0,
+                  angle_between_sides_rad=0, second_angle_rad=0, 
+                  third_angle_rad=0, radius_out_circle=0,
                   radius_in_circle=0):
     if first_side_length != 0 and height_to_first_side != 0:
         return first_side_length * 0.5 * height_to_first_side

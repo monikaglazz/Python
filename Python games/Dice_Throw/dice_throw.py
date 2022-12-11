@@ -89,7 +89,7 @@ while True:
     if choice == 1:
         try:
             throw_number = int(
-                input("\nPick how many time you want to throw a dice:"))
+                input("\nPick how many time you want to throw a dice: "))
         except ValueError:
             print("\nOnly numbers accepted.")
 

@@ -19,7 +19,7 @@ while True:
 
     is_it = leap_year(user_year)
 
-    if is_it == True:
+    if is_it is True:
         print("The", user_year, "is a leap year.")
     else:
         print("The", user_year, "is not a leap year.")
