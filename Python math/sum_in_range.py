@@ -7,7 +7,7 @@ def sum_in_range(start, end):
         for x in range(start, end, -1):
             sum += x
     else:
-        for x in range(start, end+1, 1):
+        for x in range(start, end + 1, 1):
             sum += x
 
     return sum

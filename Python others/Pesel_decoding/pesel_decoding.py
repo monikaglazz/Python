@@ -15,7 +15,7 @@ def check_if_pesel_is_correct(pesel):
 
         # sum of numbers weight
         sum_number_weight = (1 * pesel_list_digits[0]
-                             + 3* pesel_list_digits[1]
+                             + 3 * pesel_list_digits[1]
                              + 7 * pesel_list_digits[2]
                              + 9 * pesel_list_digits[3]
                              + 1 * pesel_list_digits[4]

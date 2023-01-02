@@ -1,6 +1,8 @@
-# A leap year (also known as an intercalary year or bissextile year) is a calendar year that contains an additional day
-# added to keep the calendar year synchronized with the astronomical year or seasonal year. We have a leap year when
-# a year can be divided by 4 but and not by 100 or can be divided by 400.
+# A leap year (also known as an intercalary year or bissextile year) is a 
+# calendar year that contains an additional day added to keep the calendar
+# year synchronized with the astronomical year or seasonal year. We have
+# a leap year when a year can be divided by 4 but and not by 100 or can
+# be divided by 400.
 
 
 # Function is deciding if a given year is a leap year

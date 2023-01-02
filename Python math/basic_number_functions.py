@@ -14,7 +14,7 @@ def geometric_average(*numbers):
 # Function to find all dividers for a number
 def dividers_for_number(number):
     listOfDividers = list()
-    for numberInRange in range(1, number+1):
+    for numberInRange in range(1, number + 1):
         if number % numberInRange == 0:
             listOfDividers.append(numberInRange)
 
@@ -25,7 +25,8 @@ def dividers_for_number(number):
 def less_common_multiply(first_number, second_number):
     while True:
         if first_number < second_number:
-            for number in range(first_number, (first_number * second_number) + 1):
+            for number in range(first_number,
+                                (first_number * second_number) + 1):
                 if number % first_number == 0 and number % second_number == 0:
                     return number
         else:
