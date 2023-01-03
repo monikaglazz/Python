@@ -11,8 +11,9 @@ score_map = [[-1, 1, 0], [1, -1, 2], [0, 2, -1]]
 score_of_match = {'Gamer': 0, 'Computer': 0}
 
 
-#  Instruction to the game
 def instruction():
+    """Function prints instruction to the game."""
+
     print("""\nInstruction:
         -> Paper covers Rock,
         -> Rock crushes Scissors,
@@ -21,6 +22,9 @@ def instruction():
 
 # The main function that handle the game
 def play_the_game():
+    """Function with all steps of game.
+    Prints instruction, gets player choices, gets computer move,
+    finds a winner and returns current score."""
 
     print("\nLet's play!")
 
@@ -39,20 +43,21 @@ def play_the_game():
         # Player choses the move
         gamer_choice = input("Your choice: ")
 
-        if gamer_choice.lower() == 'help':
-            instruction()
-            continue
-        elif gamer_choice.lower() == 'rock':
-            player_move = 0
-        elif gamer_choice.lower() == 'paper':
-            player_move = 1
-        elif gamer_choice.lower() == 'scissors':
-            player_move = 2
-        elif gamer_choice.lower() == 'exit':
-            break
-        else:
-            print("\nWrong input! Read carefully the menu.")
-            continue
+        match gamer_choice.lower():
+            case 'help':
+                instruction()
+                continue
+            case 'rock':
+                player_move = 0
+            case 'paper':
+                player_move = 1
+            case 'scissors':
+                player_move = 2
+            case 'exit':
+                break
+            case _:
+                print("\nWrong input! Read carefully the menu.")
+                continue
 
         print("\nNow computer is doing a move...")
         time.sleep(1)

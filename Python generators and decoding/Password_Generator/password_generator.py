@@ -1,21 +1,23 @@
 import random
 
-# define alphabet upper letters
+# define alphabet uppercase letters
 alphabet_upper = "ABCDEFGHIJKLMNOPRSQTUWXYZ"
 
 
-# define alphabet lower letters
+# define alphabet lowercase letters
 alphabet_lower = "abcdefghijklmnoprsqtuwxyz"
 
-# define number
+# define numbers
 numbers = "1234567890"
 
 # define special marks
 special_marks = "?/}{[]+=_-!@#$%^&*()"
 
 
-# check if the user picks y, n or something different
 def check_up(letter):
+    """Function checks if the user picks y, n or something different.
+    Returns letter or ''."""
+
     if letter == 'y' or letter == 'n':
         return letter
     else:
@@ -23,8 +25,9 @@ def check_up(letter):
         return ''
 
 
-# test if given value is a number
 def test(value):
+    """Function returns True if given value is a number and False if not."""
+
     try:
         value_test = int(value)
         return True
@@ -33,8 +36,9 @@ def test(value):
         return False
 
 
-#  generate password
 def generate_password(howManyDigits, symbols_for_password):
+    """Function returns generated password."""
+
     password = "".join(random.sample(symbols_for_password, howManyDigits))
     return password
 
@@ -43,17 +47,18 @@ x = False
 y = False
 
 # get the password length
-while x == False:
+while x is False:
     how_long = input("\nHow long your password may be: ")
     x = test(how_long)
 
+
 #  get number of passwords
-while y == False:
+while y is False:
     how_many = input("\nHow many passwords you want: ")
     y = test(how_many)
 
 
-print("\nChoose what do you want to include in your password. Chose y for yes and n for no. ")
+print("""\nChoose what do you want to include in your password. Choose y for yes and n for no. """)
 
 alphabet_up = ''
 alphabet_l = ''

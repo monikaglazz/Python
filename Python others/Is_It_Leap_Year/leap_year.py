@@ -1,12 +1,12 @@
-# A leap year (also known as an intercalary year or bissextile year) is a 
+# A leap year (also known as an intercalary year or bissextile year) is a
 # calendar year that contains an additional day added to keep the calendar
 # year synchronized with the astronomical year or seasonal year. We have
 # a leap year when a year can be divided by 4 but and not by 100 or can
 # be divided by 400.
 
 
-# Function is deciding if a given year is a leap year
 def leap_year(year):
+    """Function returns True for leap year and False for not leap year."""
     if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
         return True
     else:

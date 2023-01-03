@@ -2,6 +2,7 @@
 
 # The role of function is to sum numbers in specific range
 def sum_in_range(start, end):
+    """Function return sum of numbers from specific range."""
     sum = 0
     if start > end:
         for x in range(start, end, -1):
@@ -14,5 +15,4 @@ def sum_in_range(start, end):
 
 
 print(sum_in_range(0, 10))
-
 print(sum_in_range(10, 0))

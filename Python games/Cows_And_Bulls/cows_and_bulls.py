@@ -20,8 +20,8 @@ import random
 cows_and_bulls = {}
 
 
-#  Basic info about the games and rules
 def game_rules():
+    """Function prints basic info about the games and rules."""
     print("""\n
     Bulls and Cows game is played between two players where each player chooses
     a 4 digit number with distinct non-zero digits as a secret number and
@@ -39,24 +39,29 @@ def game_rules():
     (The bull is "2", the cows are "4" and "1".)\n""")
 
 
-# Function checks if the number has 4 unique digits
 def check_characters(number):
+    """Function checks if the number has 4 unique digits. 
+    Returns True or False."""
+
     if len(set(number)) == 4:
         return True
     else:
         return False
 
 
-# Function to generate our number to guess for every play
 def generate_num():
+    """Function generates our number to guess for every play and return it."""
+
     while True:
         num = random.randint(1000, 9999)
         if check_characters(str(num)):
             return num
 
 
-# Function to check if number of attempts is correct
 def number_of_attempts():
+    """Function checks if number of attempts is correct.
+    Returns the number or 0 if incorrect."""
+
     try:
         amount = int(input("\nGive the number of your attempts: "))
         if amount < 0:
@@ -67,8 +72,9 @@ def number_of_attempts():
         return 0
 
 
-# Function to get correct number from the player
 def extract_number():
+    """Function gets the number from player and returns it if correct."""
+
     while True:
         # Check if it is a number
         try:
@@ -91,11 +97,15 @@ def extract_number():
 
 # Change a number to a list
 def number_to_list(number):
+    """Function changes number to list with 
+    4 elements and returns it."""
+
     return [int(i) for i in str(number)]
 
 
-# Main game function
 def game():
+    """Function with all steps of game."""
+
     # Get the number to guess
     number_to_guess = generate_num()
 
@@ -153,6 +163,7 @@ def game():
             turn += 1
 
 
+# Start of game
 print("Hello at Cows and Bulls Game!")
 
 while True:

@@ -1,8 +1,9 @@
 import csv
 
 
-# convert csv to list
 def change_csv_to_list(file):
+    """Function returns list with data from csv"""
+
     file_open = open(file)
     file_read = csv.reader(file_open)
 
@@ -13,8 +14,8 @@ def change_csv_to_list(file):
     return file_list
 
 
-# show all countries with indexes
 def print_all_countries(country_list):
+    """Function prints all countries from list."""
 
     index = 1
     for country in country_list:
@@ -26,8 +27,10 @@ def print_all_countries(country_list):
         index += 1
 
 
-# get price from user
 def get_price():
+    """Function returns a price taken from user.
+    Checks for incorrect values."""
+
     while True:
         try:
             price = float(input("\nGive me your price: "))
@@ -38,8 +41,9 @@ def get_price():
     return price
 
 
-# get the country idex
 def get_country_index(country_list):
+    """Function takes a country index and if correct returns it."""
+
     print("\nCountries from 1 - 28 are in EU, 29 - 167 are outside EU.")
     print("All countries are in alphabetical order.\n")
     print_all_countries(country_list)
@@ -59,8 +63,8 @@ def get_country_index(country_list):
     return country_index
 
 
-# get tax value in % for county index
 def get_country_VAT(country_list, country_index):
+    """Function returns a tax value for specific country."""
 
     index = 1
     tax_value = 0
@@ -73,14 +77,15 @@ def get_country_VAT(country_list, country_index):
     return tax_value
 
 
-# return a price before VAT
 def price_before_VAT(price, country_index, country_list):
+    """Function returns a price before tax."""
     tax_value = get_country_VAT(country_list, country_index)
     return round(((1 - (float(tax_value) / 100)) * price), 4)
 
 
-# return value after VAT
 def price_after_VAT(price, country_index, country_list):
+    """Function returns a price after tax."""
+
     tax_value = get_country_VAT(country_list, country_index)
     return round(((1 + (float(tax_value) / 100)) * price), 5)
 

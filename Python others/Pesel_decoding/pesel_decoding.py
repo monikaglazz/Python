@@ -1,11 +1,14 @@
-# (pol. Polski Powszechny Elektroniczny System Ewidencji Ludności) Universal Electronic System for Registration
-# of the Population is the national identification number used in Poland since 1979. It always has 11 digits,
-# identifies just one person and cannot be changed to another one (except some specific situations such as gender
+# (pol. Polski Powszechny Elektroniczny System Ewidencji Ludności)
+# Universal Electronic System for Registration of the Population
+# is the national identification number used in Poland since 1979.
+# It always has 11 digits, identifies just one person and cannot
+# be changed to another one (except some specific situations such as gender
 # reassignment).
+# More info here: https://en.wikipedia.org/wiki/PESEL
 
 
-# check if pesel has all necessary elements
 def check_if_pesel_is_correct(pesel):
+    """Function returns Pesel if it's correct or 0 if incorrect."""
 
     #  length is 11
     if len(pesel) == 11:
@@ -45,6 +48,8 @@ def check_if_pesel_is_correct(pesel):
 
 
 def decode_date_of_birth_and_sex(pesel):
+    """Function returns list with data extracted from Pesel
+    in order [day, month, year, sex]"""
 
     pesel_str = str(pesel)
 

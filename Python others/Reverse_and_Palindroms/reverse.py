@@ -1,6 +1,7 @@
 
-# Returns True if the word is the same when read backwards
 def palindromes(word):
+    """Function returns True if the word is the same when read backwards,
+    else returns False."""
     # change the position of letters
     reverse = word[::-1]
 
@@ -11,8 +12,8 @@ def palindromes(word):
         return False
 
 
-# Return dictionary with switched keys and values
 def reverse_dictionary(diction):
+    """Function returns dictionary with switched keys and values"""
     rev_dictionary = {value: key for key, value in diction.items()}
     return rev_dictionary
 

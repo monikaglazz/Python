@@ -1,8 +1,8 @@
 from datetime import datetime
 
 
-# Function to calculate User age
 def calculate_age(age, yearNow):
+    """Functions returns user age"""
     return yearNow - age
 
 

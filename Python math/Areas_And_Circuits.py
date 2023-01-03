@@ -16,67 +16,85 @@
 import math
 
 
-# Function to get rectangle area
 def rectangle_area(first_side, second_side):
+    """Function returns rectangle area"""
     return first_side * second_side
 
 
-# Function to get rectangle circuit
 def rectangle_circuit(first_side, second_side):
+    """Function returns rectangle circuit"""
     return first_side * 2 + second_side * 2
 
 
-# Function to get square area
 def square_area(side_length):
+    """Function returns square area"""
     return side_length * side_length
 
 
-# Function to get square circuit
 def square_circuit(side_length):
+    """Function returns square circuit"""
     return side_length * 4
 
 
-# Function to get triangle area
 def triangle_area(first_side_length=0, height_to_first_side=0,
-                  second_side_length=0, third_side_length=0,
-                  angle_between_sides_rad=0, second_angle_rad=0,
+                  sec_side_len=0, third_side_len=0,
+                  first_angle_rad=0, second_angle_rad=0,
                   third_angle_rad=0, radius_out_circle=0,
                   radius_in_circle=0):
+    """Function returns triangle area in one of six different ways:
+    1. a * h
+    2. a * b * c
+    3. a * b * angle(ab)
+    4. (a * b * c) / (4 * R)
+    5. 2 * R^2 * sin(a) * sin(b) * sin(c)
+    6. r * ((a + b + c) / 2)"""
+
+    # a * h
     if first_side_length != 0 and height_to_first_side != 0:
         return first_side_length * 0.5 * height_to_first_side
-    elif first_side_length != 0 and second_side_length != 0 and third_side_length != 0:
-        p = (first_side_length + second_side_length + second_side_length) * 0.5
-        return (p * (p - first_side_length) * (p - second_side_length)
-                * (p - second_side_length)) ** 0.5
-    elif first_side_length != 0 and second_side_length != 0 and angle_between_sides_rad != 0:
-        return (first_side_length * second_side_length *
-                math.sin(angle_between_sides_rad)) * 0.5
-    elif first_side_length != 0 and second_side_length != 0 and second_side_length != 0 and radius_out_circle != 0:
-        return (first_side_length * second_side_length *
-                second_side_length) / (4 * radius_out_circle)
-    elif angle_between_sides_rad != 0 and second_angle_rad != 0 and third_angle_rad != 0 and radius_out_circle != 0:
-        return 2 * (radius_out_circle ** 2) * math.sin(angle_between_sides_rad) * math.sin(second_angle_rad) * math.sin(
-            third_angle_rad)
-    elif first_side_length != 0 and second_side_length != 0 and second_side_length != 0 and radius_in_circle != 0:
+    # a * b * c
+    elif first_side_length != 0 and sec_side_len != 0 and third_side_len != 0:
+        p = (first_side_length + sec_side_len + sec_side_len) * 0.5
+        return (p * (p - first_side_length) * (p - sec_side_len)
+                * (p - sec_side_len)) ** 0.5
+    # a * b * angle(ab)
+    elif first_side_length != 0 and sec_side_len != 0 \
+            and first_angle_rad != 0:
+        return (first_side_length * sec_side_len *
+                math.sin(first_angle_rad)) * 0.5
+    # (a * b * c) / (4 * R)
+    elif first_side_length != 0 and sec_side_len != 0 and third_side_len != 0 \
+            and radius_out_circle != 0:
+        return (first_side_length * sec_side_len *
+                sec_side_len) / (4 * radius_out_circle)
+    # 2 * R^2 * sin(a) * sin(b) * sin(c)
+    elif first_angle_rad != 0 and second_angle_rad != 0 \
+            and third_angle_rad != 0 and radius_out_circle != 0:
+        return 2 * (radius_out_circle ** 2) * math.sin(first_angle_rad) * \
+            math.sin(second_angle_rad) * math.sin(third_angle_rad)
+    # r * ((a + b + c) / 2)
+    elif first_side_length != 0 and sec_side_len != 0 and third_side_len != 0 \
+            and radius_in_circle != 0:
         return radius_in_circle * \
-            ((first_side_length + second_side_length + second_side_length) / 2)
+            ((first_side_length + sec_side_len + sec_side_len) / 2)
+    # other
     else:
         return 0
 
 
-# Function to get triangle circuit
 def triangle_circuit(first_side_length, second_side_length, third_side_length):
+    """Function returns triangle circuit"""
     return first_side_length + second_side_length + third_side_length
 
 
-# Function to get trapeze area
 def trapeze_area(first_basis_length, second_basis_length, height):
+    """Function returns trapeze area"""
     return (first_basis_length + second_basis_length) * height / 2
 
 
-# Function to get trapeze area
 def trapeze_circuit(first_side_length, first_basis_length,
                     second_basis_length=0, second_side_length=0):
+    """Function returns trapeze circuit"""
     if (second_basis_length == 0 and second_side_length == 0):
         return first_basis_length * 2 + first_side_length * 2
     elif (second_side_length == 0):
@@ -86,29 +104,29 @@ def trapeze_circuit(first_side_length, first_basis_length,
             first_side_length + second_side_length
 
 
-# Function to get circle area
 def circle_area(radius):
+    """Function returns circle area"""
     return math.pi * radius * radius
 
 
-# Function to get circle circuit
 def circle_circuit(radius):
+    """Function returns circle circuit"""
     return math.pi * 2 * radius
 
 
-# Function to get polygon area
-def polygon_area(number_of_sides=0, polygon_side_length=0,
-                 diagonal_length=0, polygon_height=0):
-    if number_of_sides != 0 and polygon_side_length != 0 and diagonal_length != 0:
-        p = (polygon_side_length + diagonal_length) * 0.5
-        return number_of_sides * \
-            ((p * (p - polygon_side_length) * ((p - diagonal_length / 2) ** 2)) ** 0.5)
-    elif number_of_sides != 0 and polygon_side_length != 0 and polygon_height != 0:
-        return number_of_sides * polygon_side_length * polygon_height * 0.25
+def polygon_area(num_of_sides=0, polygon_side_len=0,
+                 diagonal_len=0, polygon_height=0):
+    """Function returns polygon area"""
+    if num_of_sides != 0 and polygon_side_len != 0 and diagonal_len != 0:
+        p = (polygon_side_len + diagonal_len) * 0.5
+        d = (p * (p - polygon_side_len) * ((p - diagonal_len / 2) ** 2))
+        return num_of_sides * (d ** 0.5)
+    elif num_of_sides != 0 and polygon_side_len != 0 and polygon_height != 0:
+        return num_of_sides * polygon_side_len * polygon_height * 0.25
     else:
         return 0
 
 
-# Function to get polygon circuit
 def polygon_circuit(number_of_sides=0, polygon_side_length=0):
+    """Function returns polygon circuit"""
     return number_of_sides * polygon_side_length

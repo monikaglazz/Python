@@ -8,8 +8,11 @@ import re
 file_with_contacts = "Contact_book.csv"
 
 
-# function to open the file and save data as list
 def change_csv_to_list(contact_book_file):
+    """Function read the file using csv module, convert it to a list
+    and return list.
+    If file not existing returns info about it."""
+
     try:
         file = open(contact_book_file)
     except FileNotFoundError:
@@ -27,8 +30,11 @@ def change_csv_to_list(contact_book_file):
     return file_list
 
 
-# Function to get the filter option
-def second_decision():
+def searching_method():
+    """Function to choose by a user filtering option to find a contact.
+    If user input is number from 1-5 returns it.
+    If user input is incorrect returns info and ask again for input."""
+
     while True:
         # get the number
         print("Choose your searching option:\n"
@@ -51,14 +57,24 @@ def second_decision():
             continue
 
 
-# Function to check phone number
 def check_phone_number(number):
-    if len(number) == 9:
+    """Function to validate 9 digit phone number. 
+    Pattern: ###-###-###
+    Returns True or False."""
+
+    # Get te pattern for phone number
+    pattern = r'^\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{3}$'
+
+    # pass the pattern and the string into the match() method
+    if re.match(pattern, number):
         return True
+    else:
+        return False   
 
 
-# Define second function for validating an Email
 def check_email(email):
+    """Function to validate email. Returns True or False."""
+
     # Get te pattern for email
     pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
@@ -69,8 +85,8 @@ def check_email(email):
         return False
 
 
-# getting list of contacts from .csv file with matching data
 def get_contacts(filter_data, contacts_list, index):
+    """Function returns list with matching contacts."""
 
     # empty list to storage matching contacts
     matching_contacts = []
@@ -86,8 +102,8 @@ def get_contacts(filter_data, contacts_list, index):
     return matching_contacts
 
 
-# function to show all data for contact
 def show_contact_data(matching_contacts):
+    """Function shows all data for chosen contact."""
 
     # if there are contacts
     if len(matching_contacts) != 0:
@@ -102,9 +118,13 @@ def show_contact_data(matching_contacts):
 
 # function to find a contact
 def find_contact(contacts_list):
+    """Function finds contact and show its all data.
+    Uses searching_method to get filtering option,
+    get_contact to get all matching contacts and
+    show_contact_data to show all info or to inform that there is no match."""
 
     # get searching method
-    filtering = second_decision()
+    filtering = searching_method()
 
     # index for chosen searching method in contacts list
     data_index = filtering - 1
@@ -147,8 +167,11 @@ def find_contact(contacts_list):
         print()
 
 
-# function to get the first name for new contact
 def get_first_name():
+    """Function gets First Name for a new contact.
+    If no name was given by the user it will ask again.
+    Cannot be empty."""
+
     first_name = ''
     while True:
         input_user = input("Give First Name: ")
@@ -162,8 +185,10 @@ def get_first_name():
     return first_name
 
 
-# function to get the last name for new contact
 def get_last_name():
+    """Function gets from user Last Name for a new contact and returns it.
+    Can be empty."""
+
     last_name = input("Give Last Name or skip by pressing Enter: ")
     if last_name == '':
         print("You left Last Name empty. OK.")
@@ -173,6 +198,9 @@ def get_last_name():
 
 # function to get the phone for new contact
 def get_phone():
+    """Function gets Phone from user for a new contact and returns it.
+    Can be empty."""
+
     phone = ''
     while True:
         input_user = input("Give Phone number or skip by pressing Enter: ")
@@ -189,8 +217,10 @@ def get_phone():
     return phone
 
 
-# function to get the email for new contact
 def get_email():
+    """Function gets Email from user for a new contact and returns it.
+    Can be empty."""
+
     email = ''
     while True:
         input_user = input("Give Email address or skip by pressing Enter: ")
@@ -208,8 +238,11 @@ def get_email():
     return email
 
 
-#  Function to insert a contact to .csv file
 def insert_contact(contacts_file):
+    """Function insert new contact.
+    Gets: firs name, last name, phone and email. 
+    Save data to a list and add to contact book in csv file."""
+
     first_name = get_first_name()
     last_name = get_last_name()
     phone = get_phone()

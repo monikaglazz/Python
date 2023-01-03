@@ -3,16 +3,19 @@ import math
 
 # Function to calculate average of numbers
 def average(*numbers):
+    """Function returns average from numbers."""
     return sum(numbers) / len(numbers)
 
 
 # Function to calculate geometric average of numbers
 def geometric_average(*numbers):
+    """Function returns geometric average of numbers."""
     return math.prod(numbers) ** (len(numbers) / 100)
 
 
 # Function to find all dividers for a number
 def dividers_for_number(number):
+    """Function returns list with all dividers for a number."""
     listOfDividers = list()
     for numberInRange in range(1, number + 1):
         if number % numberInRange == 0:
@@ -23,6 +26,7 @@ def dividers_for_number(number):
 
 # Function to find less common multiply for two numbers
 def less_common_multiply(first_number, second_number):
+    """Function returns less common multiply for two numbers."""
     while True:
         if first_number < second_number:
             for number in range(first_number,
@@ -38,6 +42,7 @@ def less_common_multiply(first_number, second_number):
 
 # Function to find greatest common divisor for two numbers
 def greatest_common_divisor(first_number, second_number):
+    """Function returns greatest common divisor for two numbers."""
     while True:
         if first_number < second_number:
             divisor = 1
@@ -54,6 +59,7 @@ def greatest_common_divisor(first_number, second_number):
 
 # Function to check if number is prime or not
 def prime_number_test(number):
+    """Function returns True for prime number and False for not prime."""
     dividers = 0
     for divider in range(2, number):
         if number % divider == 0:

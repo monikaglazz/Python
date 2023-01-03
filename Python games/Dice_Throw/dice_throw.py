@@ -1,77 +1,69 @@
 import random
 
 
-def one():
-    print("""
-     _______
-    |       |
-    |   .   |
-    |       |
-    |_______|""")
-
-
-def two():
-    print("""
-     _______
-    | .     |
-    |       |
-    |     . |
-    |_______|""")
-
-
-def three():
-    print("""
-     _______
-    | .     |
-    |   .   |
-    |     . |
-    |_______|""")
-
-
-def four():
-    print("""
-     _______
-    | .   . |
-    |       |
-    | .   . |
-    |_______|""")
-
-
-def five():
-    print("""
-     _______
-    | .   . |
-    |   .   |
-    | .   . |
-    |_______|""")
-
-
-def six():
-    print("""
-     _______
-    | .   . |
-    | .   . |
-    | .   . |
-    |_______|""")
+def print_dice(number):
+    """Function prints a matching cube shape to a number."""
+    match number:
+        case 1:
+            print("""
+             _______
+            |       |
+            |   .   |
+            |       |
+            |_______|""")
+        case 2:
+            print("""
+             _______
+            | .     |
+            |       |
+            |     . |
+            |_______|""")
+        case 3:
+            print("""
+             _______
+            | .     |
+            |   .   |
+            |     . |
+            |_______|""")
+        case 4:
+            print("""
+             _______
+            | .   . |
+            |       |
+            | .   . |
+            |_______|""")
+        case 5:
+            print("""
+             _______
+            | .   . |
+            |   .   |
+            | .   . |
+            |_______|""")
+        case 6:
+            print("""
+             _______
+            | .   . |
+            | .   . |
+            | .   . |
+            |_______|""")
+        case _:
+            print("""
+             _______
+            |       |
+            |   .   |
+            |       |
+            |_______|""")
 
 
 def dice_throw(how_many_times):
+    """Function gets random number for every dice throw.
+    Uses print_dice to print the numbers."""
+
     i = 0
     while i < how_many_times:
         i += 1
-        trow = random.randint(1, 6)
-        if trow == 1:
-            one()
-        elif trow == 2:
-            two()
-        elif trow == 3:
-            three()
-        elif trow == 4:
-            four()
-        elif trow == 5:
-            five()
-        elif trow == 6:
-            six()
+        throw = random.randint(1, 6)
+        print_dice(throw)
 
 
 print("\nHello at the dice throw!")
@@ -85,6 +77,7 @@ while True:
         choice = int(input("\nYour choice: "))
     except ValueError:
         print("\nOnly numbers accepted.")
+        continue
 
     if choice == 1:
         try:
@@ -92,6 +85,7 @@ while True:
                 input("\nPick how many time you want to throw a dice: "))
         except ValueError:
             print("\nOnly numbers accepted.")
+            continue
 
         if throw_number <= 0:
             print("\nNumber has to be bigger than 0.")

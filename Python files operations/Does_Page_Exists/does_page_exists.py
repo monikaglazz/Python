@@ -9,8 +9,9 @@ import requests
 from requests.exceptions import ConnectionError
 
 
-# Function try to load the page and looking for status_code
 def does_page_exist(page):
+    """Function try to gets status form page. Return True or False."""
+
     try:
         status = requests.get(page)
         return True
