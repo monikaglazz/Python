@@ -1,3 +1,5 @@
+# Program to get random dad joke from https://icanhazdadjoke.com
+
 import requests
 from random import choice
 
