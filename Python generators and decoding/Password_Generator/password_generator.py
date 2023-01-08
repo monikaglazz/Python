@@ -15,8 +15,14 @@ special_marks = "?/}{[]+=_-!@#$%^&*()"
 
 
 def check_up(letter):
-    """Function checks if the user picks y, n or something different.
-    Returns letter or ''."""
+    """Check if letter is equal to y or n.
+
+    Args:
+        letter (str): letter with decision, y or n
+
+    Returns:
+        str: letter if correct or '' if incorrect
+    """
 
     if letter == 'y' or letter == 'n':
         return letter
@@ -26,7 +32,14 @@ def check_up(letter):
 
 
 def test(value):
-    """Function returns True if given value is a number and False if not."""
+    """Check if int.
+
+    Args:
+        value (str): str value tried to convert for int
+
+    Returns:
+        bool: True if int, False if not
+    """
 
     try:
         value_test = int(value)
@@ -37,7 +50,15 @@ def test(value):
 
 
 def generate_password(howManyDigits, symbols_for_password):
-    """Function returns generated password."""
+    """Generates password
+
+    Args:
+        howManyDigits (int): length of password
+        symbols_for_password (str): what digits should be included
+
+    Returns:
+        str: generated password
+    """
 
     password = "".join(random.sample(symbols_for_password, howManyDigits))
     return password
@@ -58,7 +79,8 @@ while y is False:
     y = test(how_many)
 
 
-print("""\nChoose what do you want to include in your password. Choose y for yes and n for no. """)
+print("\nChoose what do you want to include in your password.")
+print("Choose y for yes and n for no.")
 
 alphabet_up = ''
 alphabet_l = ''

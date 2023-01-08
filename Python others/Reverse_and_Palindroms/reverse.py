@@ -1,7 +1,13 @@
 
 def palindromes(word):
-    """Function returns True if the word is the same when read backwards,
-    else returns False."""
+    """Checks if a word is a palindrome.
+
+    Args:
+        word (str): word to check
+
+    Returns:
+        bool: True if it is a palindrome and False if not
+    """
     # change the position of letters
     reverse = word[::-1]
 
@@ -13,7 +19,14 @@ def palindromes(word):
 
 
 def reverse_dictionary(diction):
-    """Function returns dictionary with switched keys and values"""
+    """Switch keys with values in a dictionary.
+
+    Args:
+        diction (dict): dictionary to reverse
+
+    Returns:
+        dict: dictionary with reversed keys and values.
+    """
     rev_dictionary = {value: key for key, value in diction.items()}
     return rev_dictionary
 

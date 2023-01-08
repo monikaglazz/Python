@@ -55,9 +55,12 @@ def print_dice(number):
             |_______|""")
 
 
-def dice_throw(how_many_times):
-    """Function gets random number for every dice throw.
-    Uses print_dice to print the numbers."""
+def dice_throw(how_many_times=1):
+    """Gets random number and throw a dice.
+
+    Args:
+        how_many_times (int, optional): number of throws. Defaults to 1.
+    """
 
     i = 0
     while i < how_many_times:

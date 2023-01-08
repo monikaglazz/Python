@@ -5,12 +5,18 @@ import difflib
 import csv
 
 
-# Compare Line by Line
 def compare_files_line_by_line(file_name_1, file_name_2):
-    """Function that opens and read the .txt files to compare.
-    If at least one file is not existing returns info and 0.
-    If both files are existing will compare it line by line and 
-    return matching lines."""
+    """Compare to files line by line.
+
+    Args:
+        file_name_1 (str): name of first file to compare
+        file_name_2 (str): name of second file to compare
+
+    Returns:
+        int: 0 if at least one of files is not existing
+        or
+        str: every matching line
+    """
 
     try:
         file1 = open(file_name_1, 'r')
@@ -30,11 +36,16 @@ def compare_files_line_by_line(file_name_1, file_name_2):
     file2.close()
 
 
-# Compare using filecmp Module
 def compare_files_filecmp_module(file_name_1, file_name_2):
-    """Function that compare two .txt files using filecmp module.
-    If at least one file is not existing returns info and 0.
-    If both files are existing will return info if files are the same."""
+    """Compare to files using filecmp module
+
+    Args:
+        file_name_1 (str): name of first file to compare
+        file_name_1 (str): name of second file to compare
+
+    Returns:
+        str: info if files are the same or not
+    """
 
     try:
         compare = filecmp.cmp(file_name_1, file_name_2)
@@ -48,11 +59,18 @@ def compare_files_filecmp_module(file_name_1, file_name_2):
         print("Files are not the same")
 
 
-# Compare using difflib Module
 def compare_files_difflib_module(file_name_1, file_name_2):
-    """Function that compare two .txt files using difflib module.
-    If at least one file is not existing returns info and 0.
-    If both files are existing will return matching lines."""
+    """Compare to files using difflib module
+
+    Args:
+        file_name_1 (str): name of first file to compare
+        file_name_1 (str): name of second file to compare
+
+    Returns:
+        int: 0 if at least one of files is not existing
+        or
+        str: every matching line
+    """
 
     try:
         with open(file_name_1, 'r') as file1, open(file_name_2, 'r') as file2:
@@ -68,11 +86,18 @@ def compare_files_difflib_module(file_name_1, file_name_2):
         return 0
 
 
-# Compare .csv files Line by Line
 def compare_csv(file_name_1, file_name_2):
-    """Function that compare two .csv files using csv module.
-    If at least one file is not existing returns info and 0.
-    If both files are existing will return matching lines."""
+    """Compare to files using csv module.
+
+    Args:
+        file_name_1 (str): name of first file to compare
+        file_name_1 (str): name of second file to compare
+
+    Returns:
+        int: 0 if at least one of files is not existing
+        or
+        str: every matching line
+    """
 
     try:
         file_1 = open(file_name_1)

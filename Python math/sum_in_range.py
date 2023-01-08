@@ -1,8 +1,16 @@
 
 
 # The role of function is to sum numbers in specific range
-def sum_in_range(start, end):
-    """Function return sum of numbers from specific range."""
+def sum_in_range(start=0, end=1):
+    """Gets the sum of numbers in given range.
+
+    Args:
+        start (int, optional): start of range. Defaults to 0.
+        end (int, optional): end of range. Defaults to 1.
+
+    Returns:
+        int: sum of numbers
+    """
     sum = 0
     if start > end:
         for x in range(start, end, -1):

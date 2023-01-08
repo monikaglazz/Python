@@ -2,7 +2,15 @@ from datetime import datetime
 
 
 def calculate_age(age, yearNow):
-    """Functions returns user age"""
+    """Gets user age.
+
+    Args:
+        age (int): year of birth
+        yearNow (_type_): current year
+
+    Returns:
+        int: user age
+    """
     return yearNow - age
 
 

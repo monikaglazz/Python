@@ -3,19 +3,34 @@ import math
 
 # Function to calculate average of numbers
 def average(*numbers):
-    """Function returns average from numbers."""
+    """Gets average of numbers.
+
+    Returns:
+        float: average of numbers
+    """
     return sum(numbers) / len(numbers)
 
 
 # Function to calculate geometric average of numbers
 def geometric_average(*numbers):
-    """Function returns geometric average of numbers."""
+    """Gets geometric average of numbers.
+
+    Returns:
+        float: average of numbers
+    """
     return math.prod(numbers) ** (len(numbers) / 100)
 
 
 # Function to find all dividers for a number
 def dividers_for_number(number):
-    """Function returns list with all dividers for a number."""
+    """Gets all dividers for a number.
+
+    Args:
+        number (int): number for which we want dividers
+
+    Returns:
+        list: list of int
+    """
     listOfDividers = list()
     for numberInRange in range(1, number + 1):
         if number % numberInRange == 0:
@@ -26,7 +41,15 @@ def dividers_for_number(number):
 
 # Function to find less common multiply for two numbers
 def less_common_multiply(first_number, second_number):
-    """Function returns less common multiply for two numbers."""
+    """Gets the less common multiply for two numbers.
+
+    Args:
+        first_number (_type_): first number from pair
+        second_number (_type_): second number from pair
+
+    Returns:
+        int: less common multiply
+    """
     while True:
         if first_number < second_number:
             for number in range(first_number,
@@ -42,7 +65,15 @@ def less_common_multiply(first_number, second_number):
 
 # Function to find greatest common divisor for two numbers
 def greatest_common_divisor(first_number, second_number):
-    """Function returns greatest common divisor for two numbers."""
+    """Gets the greatest common divisor for two numbers.
+
+    Args:
+        first_number (_type_): first number from pair
+        second_number (_type_): second number from pair
+
+    Returns:
+        int: greatest common divisor
+    """
     while True:
         if first_number < second_number:
             divisor = 1
@@ -59,7 +90,14 @@ def greatest_common_divisor(first_number, second_number):
 
 # Function to check if number is prime or not
 def prime_number_test(number):
-    """Function returns True for prime number and False for not prime."""
+    """Check if number is prime or not.
+
+    Args:
+        number (int): number to check
+
+    Returns:
+        bool: True for prime, False for not.
+    """
     dividers = 0
     for divider in range(2, number):
         if number % divider == 0:

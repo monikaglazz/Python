@@ -12,7 +12,7 @@ score_of_match = {'Gamer': 0, 'Computer': 0}
 
 
 def instruction():
-    """Function prints instruction to the game."""
+    """Prints instruction to the game."""
 
     print("""\nInstruction:
         -> Paper covers Rock,
@@ -22,9 +22,7 @@ def instruction():
 
 # The main function that handle the game
 def play_the_game():
-    """Function with all steps of game.
-    Prints instruction, gets player choices, gets computer move,
-    finds a winner and returns current score."""
+    """All steps of game."""
 
     print("\nLet's play!")
 

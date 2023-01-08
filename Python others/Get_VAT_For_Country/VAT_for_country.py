@@ -2,20 +2,40 @@ import csv
 
 
 def change_csv_to_list(file):
-    """Function returns list with data from csv"""
+    """Convert .csv file to a list
 
-    file_open = open(file)
-    file_read = csv.reader(file_open)
+    Args:
+        file (str): name of source file
 
+    Returns:
+        int: 0 if file is not existing
+        or
+        list: list of str with countries
+    """
+
+    try:
+        file = open(file)
+    except FileNotFoundError:
+        print("File is not existing.")
+        return 0
+
+    # read .csv
+    file_read = csv.reader(file)
+
+    # convert to list
     file_list = [data for data in file_read]
 
-    file_open.close()
+    file.close()
 
     return file_list
 
 
 def print_all_countries(country_list):
-    """Function prints all countries from list."""
+    """Function prints all countries from list.
+
+    Args:
+        country_list (list): list of str with countries
+    """
 
     index = 1
     for country in country_list:
@@ -28,8 +48,11 @@ def print_all_countries(country_list):
 
 
 def get_price():
-    """Function returns a price taken from user.
-    Checks for incorrect values."""
+    """Get price from a user.
+
+    Returns:
+        float: price of product from a user.
+    """
 
     while True:
         try:
@@ -42,7 +65,14 @@ def get_price():
 
 
 def get_country_index(country_list):
-    """Function takes a country index and if correct returns it."""
+    """Checks correctness of country index.
+
+    Args:
+        country_list (list): list of str with countries
+
+    Returns:
+        int: index of a county
+    """
 
     print("\nCountries from 1 - 28 are in EU, 29 - 167 are outside EU.")
     print("All countries are in alphabetical order.\n")
@@ -64,7 +94,15 @@ def get_country_index(country_list):
 
 
 def get_country_VAT(country_list, country_index):
-    """Function returns a tax value for specific country."""
+    """Gets a tax value for a country.
+
+    Args:
+        country_list (list): list of str with countries
+        country_index (int): index of a county
+
+    Returns:
+        int: tax value for a country
+    """
 
     index = 1
     tax_value = 0
@@ -77,15 +115,32 @@ def get_country_VAT(country_list, country_index):
     return tax_value
 
 
-def price_before_VAT(price, country_index, country_list):
-    """Function returns a price before tax."""
+def price_before_VAT(price, country_list, country_index):
+    """Gets the price before the tax was added.
+
+    Args:
+        price (float): price given by the user
+        country_list (list): list of str with countries
+        country_index (int): index of a county
+
+    Returns:
+        float: price before the tax was added
+    """
     tax_value = get_country_VAT(country_list, country_index)
     return round(((1 - (float(tax_value) / 100)) * price), 4)
 
 
-def price_after_VAT(price, country_index, country_list):
-    """Function returns a price after tax."""
+def price_after_VAT(price, country_list, country_index):
+    """Gets the price with the tax.
 
+    Args:
+        price (float): price given by the user
+        country_list (list): list of str with countries
+        country_index (int): index of a county
+
+    Returns:
+        float: price with the tax
+    """
     tax_value = get_country_VAT(country_list, country_index)
     return round(((1 + (float(tax_value) / 100)) * price), 5)
 

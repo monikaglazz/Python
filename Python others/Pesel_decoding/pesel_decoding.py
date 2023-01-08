@@ -1,4 +1,4 @@
-# (pol. Polski Powszechny Elektroniczny System Ewidencji Ludności)
+# PESEL (pol. Polski Powszechny Elektroniczny System Ewidencji Ludności)
 # Universal Electronic System for Registration of the Population
 # is the national identification number used in Poland since 1979.
 # It always has 11 digits, identifies just one person and cannot
@@ -8,7 +8,14 @@
 
 
 def check_if_pesel_is_correct(pesel):
-    """Function returns Pesel if it's correct or 0 if incorrect."""
+    """Check correctness of PESEL
+
+    Args:
+        pesel (str): pesel number
+
+    Returns:
+        int: 0 if incorrect, pesel number if correct
+    """
 
     #  length is 11
     if len(pesel) == 11:
@@ -48,8 +55,15 @@ def check_if_pesel_is_correct(pesel):
 
 
 def decode_date_of_birth_and_sex(pesel):
-    """Function returns list with data extracted from Pesel
-    in order [day, month, year, sex]"""
+    """Gets data extracted from Pesel
+    in order [day, month, year, sex]
+
+    Args:
+        pesel (str): pesel number
+
+    Returns:
+        list: list of int
+    """
 
     pesel_str = str(pesel)
 

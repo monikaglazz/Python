@@ -1,16 +1,16 @@
-# The file pages.txt is a list of pages
-# Program opens this file and check if page
-# exists or not. After checking it is writing
-# the url to specified file: working_pages.txt if
-# the page exists an not_working_pages.txt if page
-# does not exists.
-
 import requests
 from requests.exceptions import ConnectionError
 
 
 def does_page_exist(page):
-    """Function try to gets status form page. Return True or False."""
+    """Sort working and not working pages.
+
+    Args:
+        page (str): link to page to check
+
+    Returns:
+        bool: True if exists, False if not
+    """
 
     try:
         status = requests.get(page)

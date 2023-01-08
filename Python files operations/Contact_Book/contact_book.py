@@ -2,16 +2,24 @@
 
 import csv
 import re
+import sys
 
 
 # set the file with contacts
-file_with_contacts = "Contact_book.csv"
+file_with_contacts = "contact_book.csv"
 
 
 def change_csv_to_list(contact_book_file):
-    """Function read the file using csv module, convert it to a list
-    and return list.
-    If file not existing returns info about it."""
+    """Convert .csv file to a list
+
+    Args:
+        contact_book_file (str): name of source file
+
+    Returns:
+        int: 0 if file is not existing
+        or
+        list: list of str with contacts
+    """
 
     try:
         file = open(contact_book_file)
@@ -31,9 +39,11 @@ def change_csv_to_list(contact_book_file):
 
 
 def searching_method():
-    """Function to choose by a user filtering option to find a contact.
-    If user input is number from 1-5 returns it.
-    If user input is incorrect returns info and ask again for input."""
+    """Find filtering option.
+
+    Returns:
+        int: filtering option from menu
+    """
 
     while True:
         # get the number
@@ -58,22 +68,34 @@ def searching_method():
 
 
 def check_phone_number(number):
-    """Function to validate 9 digit phone number. 
-    Pattern: ###-###-###
-    Returns True or False."""
+    """Validate phone number.
+
+    Args:
+        number (str): 9 digits number
+
+    Returns:
+        bool: True if number is correct, False if is incorrect
+    """
 
     # Get te pattern for phone number
-    pattern = r'^\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{3}$'
+    pattern = r'^\d{9}$'
 
     # pass the pattern and the string into the match() method
     if re.match(pattern, number):
         return True
     else:
-        return False   
+        return False
 
 
 def check_email(email):
-    """Function to validate email. Returns True or False."""
+    """Validate email.
+
+    Args:
+        email (str): email address
+
+    Returns:
+        bool: True if email is correct, False if is incorrect
+    """
 
     # Get te pattern for email
     pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
@@ -86,7 +108,16 @@ def check_email(email):
 
 
 def get_contacts(filter_data, contacts_list, index):
-    """Function returns list with matching contacts."""
+    """Finds matching contacts.
+
+    Args:
+        filter_data (str): inserted data to find
+        contacts_list (list): list of str with contacts data
+        index (int): index of column used for filtering
+
+    Returns:
+        list: list of str witch matching contacts
+    """
 
     # empty list to storage matching contacts
     matching_contacts = []
@@ -103,7 +134,11 @@ def get_contacts(filter_data, contacts_list, index):
 
 
 def show_contact_data(matching_contacts):
-    """Function shows all data for chosen contact."""
+    """Show all data for contact.
+
+    Args:
+        matching_contacts (list): list of str witch matching contacts
+    """
 
     # if there are contacts
     if len(matching_contacts) != 0:
@@ -116,12 +151,12 @@ def show_contact_data(matching_contacts):
         print("No matching contacts.")
 
 
-# function to find a contact
 def find_contact(contacts_list):
-    """Function finds contact and show its all data.
-    Uses searching_method to get filtering option,
-    get_contact to get all matching contacts and
-    show_contact_data to show all info or to inform that there is no match."""
+    """Finds matching contacts and all data about it.
+
+    Args:
+        contacts_list (list): list of str with contacts data
+    """
 
     # get searching method
     filtering = searching_method()
@@ -168,9 +203,11 @@ def find_contact(contacts_list):
 
 
 def get_first_name():
-    """Function gets First Name for a new contact.
-    If no name was given by the user it will ask again.
-    Cannot be empty."""
+    """Gets First Name for new contact. Cannot be empty.
+
+    Returns:
+        str: First Name for new contact
+    """
 
     first_name = ''
     while True:
@@ -186,8 +223,11 @@ def get_first_name():
 
 
 def get_last_name():
-    """Function gets from user Last Name for a new contact and returns it.
-    Can be empty."""
+    """Gets Last Name for new contact.
+
+    Returns:
+        str: Last Name for new contact
+    """
 
     last_name = input("Give Last Name or skip by pressing Enter: ")
     if last_name == '':
@@ -196,10 +236,12 @@ def get_last_name():
     return last_name
 
 
-# function to get the phone for new contact
 def get_phone():
-    """Function gets Phone from user for a new contact and returns it.
-    Can be empty."""
+    """Gets Phone number for new contact.
+
+    Returns:
+        str: Phone number for new contact
+    """
 
     phone = ''
     while True:
@@ -218,8 +260,11 @@ def get_phone():
 
 
 def get_email():
-    """Function gets Email from user for a new contact and returns it.
-    Can be empty."""
+    """Gets Email for new contact.
+
+    Returns:
+        str: Email for new contact
+    """
 
     email = ''
     while True:
@@ -239,9 +284,11 @@ def get_email():
 
 
 def insert_contact(contacts_file):
-    """Function insert new contact.
-    Gets: firs name, last name, phone and email. 
-    Save data to a list and add to contact book in csv file."""
+    """Inserts new contact to .csv file
+
+    Args:
+        contacts_file (str): name of source file
+    """
 
     first_name = get_first_name()
     last_name = get_last_name()
@@ -258,24 +305,27 @@ def insert_contact(contacts_file):
 # Main part of working program
 contacts_list = change_csv_to_list(file_with_contacts)
 
-while True:
-    print("\nChoose what do you want to do:\n"
-          "1 - Search for contact\n"
-          "2 - Adding contact\n"
-          "3 - Quit\n")
-    try:
-        decision = int(input("Your choice: "))
-    except ValueError:
-        print("You have to pick a number 1, 2 or 3.")
-        continue
+if contacts_list != 0:
+    while True:
+        print("\nChoose what do you want to do:\n"
+              "1 - Search for contact\n"
+              "2 - Adding contact\n"
+              "3 - Quit\n")
+        try:
+            decision = int(input("Your choice: "))
+        except ValueError:
+            print("You have to pick a number 1, 2 or 3.")
+            continue
 
-    if decision == 1:
-        find_contact(contacts_list)
-    elif decision == 2:
-        insert_contact(file_with_contacts)
-        print("Contact has been added")
-    elif decision == 3:
-        print("End of program. Bye!")
-        break
-    else:
-        print("This number is not in menu. Try again.")
+        if decision == 1:
+            find_contact(contacts_list)
+        elif decision == 2:
+            insert_contact(file_with_contacts)
+            print("Contact has been added")
+        elif decision == 3:
+            print("End of program. Bye!")
+            break
+        else:
+            print("This number is not in menu. Try again.")
+else:
+    sys.exit()

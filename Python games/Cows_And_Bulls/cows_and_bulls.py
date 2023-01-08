@@ -21,7 +21,8 @@ cows_and_bulls = {}
 
 
 def game_rules():
-    """Function prints basic info about the games and rules."""
+    """Prints basic info about the games and rules."""
+
     print("""\n
     Bulls and Cows game is played between two players where each player chooses
     a 4 digit number with distinct non-zero digits as a secret number and
@@ -40,8 +41,11 @@ def game_rules():
 
 
 def check_characters(number):
-    """Function checks if the number has 4 unique digits. 
-    Returns True or False."""
+    """Check for 4 unique digits number.
+
+    Returns:
+        bool: True for unique, False for not unique
+    """
 
     if len(set(number)) == 4:
         return True
@@ -50,7 +54,11 @@ def check_characters(number):
 
 
 def generate_num():
-    """Function generates our number to guess for every play and return it."""
+    """Generates the number to guess.
+
+    Returns:
+        int: number to guess
+    """
 
     while True:
         num = random.randint(1000, 9999)
@@ -59,8 +67,11 @@ def generate_num():
 
 
 def number_of_attempts():
-    """Function checks if number of attempts is correct.
-    Returns the number or 0 if incorrect."""
+    """Check correctness of number of attempts.
+
+    Returns:
+        int: number of attempts or 0 for ValueError
+    """
 
     try:
         amount = int(input("\nGive the number of your attempts: "))
@@ -73,7 +84,11 @@ def number_of_attempts():
 
 
 def extract_number():
-    """Function gets the number from player and returns it if correct."""
+    """Gets the number from user.
+
+    Returns:
+        int: number user picks
+    """
 
     while True:
         # Check if it is a number
@@ -97,8 +112,14 @@ def extract_number():
 
 # Change a number to a list
 def number_to_list(number):
-    """Function changes number to list with 
-    4 elements and returns it."""
+    """Convert number to list of int
+
+    Args:
+        number (int): number passed by user or generated to guess
+
+    Returns:
+        list: list of int
+    """
 
     return [int(i) for i in str(number)]
 
